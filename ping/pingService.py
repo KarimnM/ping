@@ -32,7 +32,7 @@ def internal_server_error(e):
 @app.route('/ping', methods=['GET'])
 @auth.login_required
 def ping():
-    url = 'http://127.0.0.1:7001/'
+    url = 'http://127.0.0.1:7005/'
     start_time = time.time()
     r = requests.get(url + 'pong', auth=HTTPAuth('vcu','rams'))
     end_time = time.time()
