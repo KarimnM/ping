@@ -1,4 +1,5 @@
 import random
+from random import randrange
 from flask import Flask, app
 from flask.json import jsonify
 from flask_httpauth import HTTPDigestAuth
@@ -29,5 +30,5 @@ def internal_server_error(e):
 @app.route('/pong', methods=['GET'])
 @auth.login_required
 def pong():
-    number = random.random()
+    number = random.randrange(1000000)
     return jsonify({"random_int" : number}), 201
